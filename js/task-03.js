@@ -16,10 +16,10 @@ const images = [
 
 const galleryElement = document.querySelector('.gallery');
 
-const createGalleryItem = (image) => {
+const createGalleryItem = ({url, alt}) => {
   return `
     <li class="gallery-item">
-      <img src="${image.url}" alt="${image.alt}" class="gallery-image">
+      <img src="${url}" alt="${alt}" width = 200px, height = 150px list-style = none;  class="gallery-image">
     </li>
   `;
 };
