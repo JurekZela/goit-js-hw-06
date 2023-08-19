@@ -1,20 +1,20 @@
-// Not Change Color?
+ const validationInputRef = document.querySelector('#validation-input');
+ const desiredLength = parseInt(validationInputRef.getAttribute('data-length'));
 
-const inputRef = document.querySelector('#validation-input');
+ validationInputRef.addEventListener('blur', onChangeLengthInputBlur);
 
-
-inputRef.addEventListener('blur', onInputValidatorBlur);
-
-function onInputValidatorBlur(e) {
-    const isValid = e.currentTarget.value.length === inputRef.dataset.length;
+ function  onChangeLengthInputBlur(e) {
+    
+  const isValid =  desiredLength === e.currentTarget.value.length;
 
     if (isValid) {
 
-        inputRef.classList.remove('invalid');
-        inputRef.classList.add('valid');
-        
+        validationInputRef.classList.add('valid');
+    validationInputRef.classList.remove('invalid');
+
     }else {
-        inputRef.classList.add('invalid');
-        inputRef.classList.remove('valid');   
+        
+        validationInputRef.classList.remove('valid');
+    validationInputRef.classList.add('invalid');
     }
-};
+ };
