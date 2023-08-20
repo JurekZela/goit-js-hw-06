@@ -35,13 +35,3 @@ img {
   list-style: none;
   text-decoration: none;
 }
-
-.add-green:hover {
-  background-color: green;
-  border: none;
-}
-
-.add-red:hover {
-  background-color: red;
-  border: none;
-}
