@@ -12,6 +12,6 @@ btnRef.addEventListener('click', onChangeColorClick);
 function onChangeColorClick(){
 const spanColorRef = document.querySelector('.widget .color');
 
-  bodyRef.style.backgroundColor = getRandomHexColor();
-spanColorRef.textContent = getRandomHexColor();
+ const randomHexColor = bodyRef.style.backgroundColor = getRandomHexColor();
+spanColorRef.textContent = randomHexColor;
 };
