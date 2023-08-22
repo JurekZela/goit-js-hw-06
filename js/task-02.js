@@ -9,11 +9,14 @@ const ingredients = [
 
 const ingredientsListRef = document.querySelector('#ingredients');
 
-  ingredients.forEach(ingredient => {
 
-    const  createTitleRef = document.createElement('li');
-    createTitleRef.classList.add('item');
-    createTitleRef.textContent = ingredient;
+   const makeMenuChef = ingredients.map( ingredient => {
 
-    ingredientsListRef.append(titleRef);
-  });
+      const  createTitleRef = document.createElement('li');
+      createTitleRef.classList.add('item');
+      createTitleRef.textContent = ingredient;
+
+      return createTitleRef;
+    });
+
+  ingredientsListRef.append(...makeMenuChef);
