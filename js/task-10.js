@@ -4,31 +4,21 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const controlCreateBtnRef = document.querySelector('#controls [data-create]');
-const controlDestroyBtnRef = document.querySelector('#controls [data-destroy]');
-const controlsNumberRef = document.querySelector('#controls input[type="number"]');
-const boxesRef = document.querySelector('#boxes');
 
-controlCreateBtnRef.addEventListener('click', createBoxes);
-controlDestroyBtnRef.addEventListener('click', destroyBoxes);
+const inputNumberRef = document.querySelector('#controls input');
+const controlsCreateBtnRef = document.querySelector('#controls [data-create]');
+const boxesRef = document.getElementById('boxes');
+
+controlsCreateBtnRef.addEventListener('click', createBoxes);
 
 function createBoxes(amount) {
-let size = 30;
+  const size = 30;
 
 for (let i = 0; i < amount; i += 1) {
-  const box = document.createElement('div');
-  box.style.width = `${size}px`;
-  box.style.height = `${size}px`;
-  box.style.backgroundColor = getRandomHexColor();
-  boxesRef.appendChild(box);
-  size += 10;
-  
-};
+    const createBoxes = document.createElement('div');
+    boxesRef.append(createBoxes);
+
+  };
 };
 
-createBoxes(controlsNumberRef.textContent);
-
-
-function destroyBoxes() {
-  boxesRef.remove();
-};
+console.log(createBoxes(inputNumberRef.textContent));
