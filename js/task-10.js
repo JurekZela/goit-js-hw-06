@@ -4,21 +4,35 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const boxesContainer = document.querySelector('#boxes');
+const createButton = document.querySelector('[data-create]');
+const destroyButton = document.querySelector('[data-destroy]');
 
-const inputNumberRef = document.querySelector('#controls input');
-const controlsCreateBtnRef = document.querySelector('#controls [data-create]');
-const boxesRef = document.getElementById('boxes');
+createButton.addEventListener('click', oninputValueCreatedElement);
+destroyButton.addEventListener('click', destroyBoxes);
 
-controlsCreateBtnRef.addEventListener('click', createBoxes);
 
 function createBoxes(amount) {
-  const size = 30;
 
-for (let i = 0; i < amount; i += 1) {
-    const createBoxes = document.createElement('div');
-    boxesRef.append(createBoxes);
+  let size = 30;
 
-  };
+ for (let i = 0; i < amount; i+= 1) {
+    const box = document.createElement('div');
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxesContainer.append(box);
+
+    size += 10;
+  }
 };
 
-console.log(createBoxes(inputNumberRef.textContent));
+function oninputValueCreatedElement() {
+  const inputAmount = document.querySelector('input').value;
+  createBoxes(inputAmount);
+};
+
+
+function destroyBoxes() {
+  boxesContainer.innerHTML = '';
+};
